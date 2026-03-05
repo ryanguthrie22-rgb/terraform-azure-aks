@@ -6,3 +6,4 @@
 **/*.tfvars
 **/keys/
 **/.kube/
+env/dev/Azure-Terraform-Test/

@@ -1,5 +1,0 @@
-cat > providers.tf <<'EOF'
-provider "azurerm" {
-  features {}
-}
-EOF

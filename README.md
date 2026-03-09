@@ -105,3 +105,5 @@ terraform-azure-aks/
 ├── .gitignore
 ├── LICENSE
 └── README.md
+
+Test CI trigger

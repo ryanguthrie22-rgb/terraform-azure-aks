@@ -36,6 +36,48 @@ GitHub
 → LoadBalancer Service  
 → Horizontal Pod Autoscaler
 
+Terraform Remote State Backend
+
+This project uses Azure Blob Storage as a remote Terraform backend instead of storing state locally.
+
+Terraform state is stored in an Azure Storage Account, allowing consistent infrastructure management across environments and preventing state conflicts.
+
+Azure Backend Resources
+
+The Terraform state is stored in the following Azure resources:
+
+Resource Group: rg-terraform-state
+
+Storage Account: tfstate2234618784
+
+Blob Container: tfstate
+
+State File: terraform-azure-aks-dev.tfstate
+
+Backend Configuration
+
+The backend is configured in versions.tf:
+
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg-terraform-state"
+    storage_account_name = "tfstate2234618784"
+    container_name       = "tfstate"
+    key                  = "terraform-azure-aks-dev.tfstate"
+  }
+}
+Why Remote State Is Used
+
+Using a remote backend provides several advantages:
+
+centralized Terraform state management
+
+prevents conflicts when multiple engineers run Terraform
+
+safer and more reliable than local state files
+
+standard practice for production Terraform environments
+
 ## Repository structure
 
 ```text

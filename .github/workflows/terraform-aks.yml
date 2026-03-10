@@ -1,4 +1,4 @@
-name: Terraform AKS
+rname: Terraform AKS
 
 on:
   push:
@@ -45,4 +45,4 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        run: terraform plan -input=false -no-color
+        run:run: terraform plan -input=false -no-color -var-file="dev.auto.tfvars" 

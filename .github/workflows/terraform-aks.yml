@@ -45,4 +45,8 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
+<<<<<<< HEAD
         run:run: terraform plan -input=false -no-color -var-file="dev.auto.tfvars" 
+=======
+        run: terraform plan -input=false -no-color -var-file="dev.auto.tfvars"
+>>>>>>> 8aa970de88cd65fd22657e96b1b30be7cf6fbfe0
